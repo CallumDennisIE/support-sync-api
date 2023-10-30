@@ -62,7 +62,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['localhost',
-                 'https://support-sync-api-e945b971b2d8.herokuapp.com/']
+                 'support-sync-api-e945b971b2d8.herokuapp.com/']
 
 
 # Application definition
