@@ -109,7 +109,7 @@ else:
         r"^https://.*\.gitpod\.io$",
     ]
 
- CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'support_sync_api.urls'
 
