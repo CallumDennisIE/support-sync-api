@@ -63,7 +63,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['localhost',
-                 os.environ.get('ALLOWED_HOST'),]
+                 os.environ.get('ALLOWED_HOST'),
+                 '8000-callumdennisie-support-s-7dc0yi9d3t.us2.codeanyapp.com']
 
 
 # Application definition
