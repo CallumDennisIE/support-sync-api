@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container"
 import Card from "react-bootstrap/Card"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
+import Alert from "react-bootstrap/Alert"
 
 import { useHistory } from "react-router";
 import { axiosReq } from "../api/axiosDefaults";
@@ -35,7 +36,7 @@ const CreateTicket = () => {
 
         formData.append("title", title);
         formData.append("description", description);
-        //formData.append("priority", priority);
+        formData.append("priority", priority);
 
         try {
             const { data } = await axiosReq.post("/tickets/", formData);
@@ -54,7 +55,7 @@ const CreateTicket = () => {
                 <Card>
                     <Card.Title>Create a Support Ticket</Card.Title>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group controlId="exampleForm.ControlInput1">
+                        <Form.Group>
                             <Form.Label>Ticket Title:</Form.Label>
                             <Form.Control 
                                 type="text" 
@@ -64,7 +65,12 @@ const CreateTicket = () => {
                                 onChange={handleChange} 
                             />
                         </Form.Group>
-                        <Form.Group controlId="exampleForm.ControlSelect1">
+                        {errors?.title?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+                        <Form.Group>
                             <Form.Label>Priority:</Form.Label>
                             <Form.Control 
                                 as="select" 
@@ -77,7 +83,12 @@ const CreateTicket = () => {
                                 <option>High</option>
                             </Form.Control>
                         </Form.Group>
-                        <Form.Group controlId="exampleForm.ControlTextarea1">
+                        {errors?.priority?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+                        <Form.Group>
                             <Form.Label>Description:</Form.Label>
                             <Form.Control 
                                 as="textarea" 
@@ -88,6 +99,14 @@ const CreateTicket = () => {
                                 onChange={handleChange} 
                             />
                         </Form.Group>
+                        {errors?.description?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+                        <Button variant="primary" onClick={() => history.goBack()}>
+                            Cancel
+                        </Button>
                         <Button variant="primary" type="submit">
                             Create Ticket
                         </Button>
