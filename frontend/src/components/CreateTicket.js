@@ -36,7 +36,7 @@ const CreateTicket = () => {
 
         formData.append("title", title);
         formData.append("description", description);
-        formData.append("priority", priority);
+        formData.append("priority", priority.toLowerCase());
 
         try {
             const { data } = await axiosReq.post("/tickets/", formData);
