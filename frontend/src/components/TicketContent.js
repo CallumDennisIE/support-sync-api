@@ -16,7 +16,9 @@ const TicketContent = (props) => {
         description, 
         status,
         visibility,
-        priority
+        priority,
+        created_at,
+        updated_at
     } = props;
 
     const currentUser = useCurrentUser();
@@ -36,7 +38,7 @@ const TicketContent = (props) => {
                 </Col>
                 <Col>
                     <div>
-                        <Sidebar status={status} visibility={visibility} priority={priority} requestor={owner} />
+                        <Sidebar status={status} visibility={visibility} priority={priority} requestor={owner} created_at={created_at} updated_at={updated_at} />
                     </div>
                 </Col>
             </Row>

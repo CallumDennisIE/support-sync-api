@@ -75,6 +75,18 @@ const Sidebar = (props) => {
                     <Col>Callum Dennis</Col>
                 </Row>
             </ListGroup.Item>
+            <ListGroup.Item>
+                <Row>
+                    <Col>Created At:</Col>
+                    <Col>{props.created_at}</Col>
+                </Row>
+            </ListGroup.Item>
+            <ListGroup.Item>
+                <Row>
+                    <Col>Updated At:</Col>
+                    <Col>{props.updated_at}</Col>
+                </Row>
+            </ListGroup.Item>
         </ListGroup>
     </div>
   )
