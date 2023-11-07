@@ -1,50 +1,37 @@
-import React from 'react'
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import Button from "react-bootstrap/Button"
+import React, { useEffect, useState } from 'react'
 import Container from "react-bootstrap/Container"
-import Card from "react-bootstrap/Card"
-import Comment from './Comment'
-import Sidebar from './Sidebar'
+import TicketContent from "./TicketContent"
+import { useParams } from 'react-router'
+import { axiosReq } from '../api/axiosDefaults'
 
-const Ticket = (props) => {
-  return (
-    <div>
-        <Container>
-            <Card>
-                <Card.Title>Support Ticket Title</Card.Title>
-                <Row>
-                    <Col><Button variant="primary">Assign</Button></Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                        <Card.Text>{props.description}</Card.Text>
-                        </div>
-                    </Col>
-                    <Col>
-                        <div>
-                            <Sidebar />
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            <h3>Comments</h3>
-                            <Row>
-                                <Col>
-                                    <Comment user="Callum Dennis" role="Supporter" comment="this is callums comment"/>
-                                    <Comment user="ABC Tech" role="Requestor" comment="this is ABC Tech's comment"/>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Col>
-                </Row>
-            </Card>
-        </Container>
-    </div>
-  )
+const Ticket = () => {
+
+    const { id } = useParams();
+    const [ticket, setTicket] = useState({ results: [] });
+
+    useEffect(() =>{
+        const handleMount = async () => {
+            try {
+                const [{data: ticket}] = await Promise.all([
+                    axiosReq.get(`/tickets/${id}`)
+                ])
+                setTicket({results: [ticket]})
+                console.log('Ticket: ')
+                console.log(ticket)
+            } catch(err) {
+                console.log(err);
+            }
+        }
+        handleMount()
+    }, [id])
+
+    return (
+        <div>
+            <Container>
+                <TicketContent {...ticket.results[0]} setTickets={setTicket} />
+            </Container>
+        </div>
+    )
 }
 
 export default Ticket

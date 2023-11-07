@@ -1,6 +1,7 @@
 import './App.css';
 import CreateTicket from './components/CreateTicket';
 import ListTickets from './components/ListTickets';
+import Ticket from './components/Ticket';
 import NavBar from './components/NavBar';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
@@ -17,6 +18,7 @@ function App() {
                 <Switch>
                     <Route exact path="/" render={()=><h1>Home</h1>}/>
                     <Route exact path="/tickets" render={()=><ListTickets />}/>
+                    <Route exact path="/tickets/:id" render={()=><Ticket />}/>
                     <Route exact path="/create-ticket" render={()=><CreateTicket />}/>
                     <Route exact path="/signin" render={()=><SignIn />}/>
                     <Route exact path="/signup" render={()=><SignUp />}/>
