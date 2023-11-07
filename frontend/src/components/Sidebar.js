@@ -11,6 +11,9 @@ const Sidebar = (props) => {
             <ListGroup.Item>
                 <Row>
                     <Col>
+                        <i class="fa-regular fa-circle-check"></i>
+                    </Col>
+                    <Col>
                         <p>Status</p>
                     </Col>
                     <Col>
@@ -30,6 +33,9 @@ const Sidebar = (props) => {
             </ListGroup.Item>
             <ListGroup.Item>
                 <Row>
+                    <Col>
+                        <i class="fa-regular fa-eye"></i>
+                    </Col>
                     <Col>Visibility:</Col>
                     <Col>
                         <Dropdown>
@@ -47,6 +53,7 @@ const Sidebar = (props) => {
             </ListGroup.Item>
             <ListGroup.Item>
                 <Row>
+                    <Col><i class="fa-solid fa-bullhorn"></i></Col>
                     <Col>Priority:</Col>
                     <Col>
                         <Dropdown>
@@ -65,26 +72,26 @@ const Sidebar = (props) => {
             </ListGroup.Item>
             <ListGroup.Item>
                 <Row>
+                    <Col><i class="fa-regular fa-address-book"></i></Col>
                     <Col>Requestor:</Col>
                     <Col>{props.requestor}</Col>
                 </Row>
             </ListGroup.Item>
             <ListGroup.Item>
                 <Row>
+                    <Col><i class="fa-regular fa-user"></i></Col>
                     <Col>Supporter:</Col>
                     <Col>Callum Dennis</Col>
                 </Row>
             </ListGroup.Item>
             <ListGroup.Item>
                 <Row>
-                    <Col>Created At:</Col>
-                    <Col>{props.created_at}</Col>
+                    <Col>Created At {props.created_at}</Col>
                 </Row>
             </ListGroup.Item>
             <ListGroup.Item>
                 <Row>
-                    <Col>Updated At:</Col>
-                    <Col>{props.updated_at}</Col>
+                    <Col>Updated At {props.updated_at}</Col>
                 </Row>
             </ListGroup.Item>
         </ListGroup>
