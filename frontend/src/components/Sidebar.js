@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col"
 import Dropdown from "react-bootstrap/Dropdown"
 import ListGroup from "react-bootstrap/ListGroup"
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
     <div>
         <ListGroup>
@@ -16,7 +16,7 @@ const Sidebar = () => {
                     <Col>
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                In Progress
+                                {props.status}
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
@@ -34,7 +34,7 @@ const Sidebar = () => {
                     <Col>
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                Public
+                                {props.visibility}
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
@@ -51,7 +51,7 @@ const Sidebar = () => {
                     <Col>
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                High
+                                {props.priority}
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
@@ -66,7 +66,7 @@ const Sidebar = () => {
             <ListGroup.Item>
                 <Row>
                     <Col>Requestor:</Col>
-                    <Col>ABC Tech</Col>
+                    <Col>{props.requestor}</Col>
                 </Row>
             </ListGroup.Item>
             <ListGroup.Item>

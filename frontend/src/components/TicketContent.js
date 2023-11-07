@@ -24,19 +24,19 @@ const TicketContent = (props) => {
 
     return (
         <Card>
-            <Card.Title>Support Ticket Title</Card.Title>
+            <Card.Title>{title}</Card.Title>
             <Row>
                 <Col><Button variant="primary">Assign</Button></Col>
             </Row>
             <Row>
                 <Col>
                     <div>
-                    <Card.Text>Hello {owner}</Card.Text>
+                    <Card.Text>{description}</Card.Text>
                     </div>
                 </Col>
                 <Col>
                     <div>
-                        <Sidebar />
+                        <Sidebar status={status} visibility={visibility} priority={priority} requestor={owner} />
                     </div>
                 </Col>
             </Row>
