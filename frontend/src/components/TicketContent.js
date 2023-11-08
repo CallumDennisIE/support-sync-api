@@ -27,9 +27,7 @@ const TicketContent = (props) => {
 
     return (
         <div>
-            {(is_owner || visibility === 'public') ? (
-                <Card>
-            
+            <Card>
                 <Card.Title>{title}</Card.Title>
                 <Row>
                     <Col><Button variant="primary">Assign</Button></Col>
@@ -69,7 +67,6 @@ const TicketContent = (props) => {
                     </Col>
                 </Row>
             </Card>
-            ) : (<div>Sorry can't view as not public / owner</div>)}
         </div>
     )
 }

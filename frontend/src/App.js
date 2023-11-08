@@ -8,6 +8,7 @@ import SignUp from './components/SignUp';
 import Container from "react-bootstrap/Container"
 import {Route, Switch} from 'react-router-dom';
 import './api/axiosDefaults';
+import TicketsPage from './components/TicketsPage';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
             <NavBar />
             <Container>
                 <Switch>
-                    <Route exact path="/" render={()=><h1>Home</h1>}/>
+                    <Route exact path="/" render={()=><TicketsPage message="No tickets found. Try a different search query." />}/>
                     <Route exact path="/tickets" render={()=><ListTickets />}/>
                     <Route exact path="/tickets/:id" render={()=><Ticket />}/>
                     <Route exact path="/create-ticket" render={()=><CreateTicket />}/>
