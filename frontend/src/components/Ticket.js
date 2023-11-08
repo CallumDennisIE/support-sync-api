@@ -16,8 +16,6 @@ const Ticket = () => {
                     axiosReq.get(`/tickets/${id}`)
                 ])
                 setTicket({results: [ticket]})
-                console.log('Ticket: ')
-                console.log(ticket)
             } catch(err) {
                 console.log(err);
             }

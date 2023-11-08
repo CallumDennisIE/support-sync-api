@@ -24,49 +24,53 @@ const TicketContent = (props) => {
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner
-    const is_supporter = currentUser?.role === "supporter"
 
     return (
-        <Card>
-            <Card.Title>{title}</Card.Title>
-            <Row>
-                <Col><Button variant="primary">Assign</Button></Col>
-            </Row>
-            <Row>
-                <Col>
-                    <div>
-                    <Card.Text>{description}</Card.Text>
-                    </div>
-                </Col>
-                <Col>
-                    <div>
-                        <Sidebar 
-                            status={status} 
-                            visibility={visibility} 
-                            priority={priority} 
-                            requestor={owner} 
-                            created_at={created_at} 
-                            updated_at={updated_at}
-                            is_supporter={is_supporter}
-                            is_owner={is_owner}
-                        />
-                    </div>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <div>
-                        <h3>Comments</h3>
-                        <Row>
-                            <Col>
-                                <Comment user="Callum Dennis" role="Supporter" comment="this is callums comment"/>
-                                <Comment user="ABC Tech" role="Requestor" comment="this is ABC Tech's comment"/>
-                            </Col>
-                        </Row>
-                    </div>
-                </Col>
-            </Row>
-        </Card>
+        <div>
+            {(is_owner || visibility === 'public') ? (
+                <Card>
+            
+                <Card.Title>{title}</Card.Title>
+                <Row>
+                    <Col><Button variant="primary">Assign</Button></Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div>
+                        <Card.Text>{description}</Card.Text>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div>
+                            <Sidebar 
+                                status={status} 
+                                visibility={visibility} 
+                                priority={priority} 
+                                requestor={owner} 
+                                created_at={created_at} 
+                                updated_at={updated_at}
+                                is_supporter={false}
+                                is_owner={is_owner}
+                            />
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div>
+                            <h3>Comments</h3>
+                            <Row>
+                                <Col>
+                                    <Comment user="Callum Dennis" role="Supporter" comment="this is callums comment"/>
+                                    <Comment user="ABC Tech" role="Requestor" comment="this is ABC Tech's comment"/>
+                                </Col>
+                            </Row>
+                        </div>
+                    </Col>
+                </Row>
+            </Card>
+            ) : (<div>Sorry can't view as not public / owner</div>)}
+        </div>
     )
 }
 
