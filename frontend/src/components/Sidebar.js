@@ -94,6 +94,12 @@ const Sidebar = (props) => {
                     <Col>Updated At {props.updated_at}</Col>
                 </Row>
             </ListGroup.Item>
+            <ListGroup.Item>
+                <Row>
+                    <Col>{props.is_owner ? "Owner" : "Not Owner"}</Col>
+                    <Col>{props.is_supporter ? "Supporter" : "Requestor"}</Col>
+                </Row>
+            </ListGroup.Item>
         </ListGroup>
     </div>
   )

@@ -28,7 +28,7 @@ const Ticket = () => {
     return (
         <div>
             <Container>
-                <TicketContent {...ticket.results[0]} setTickets={setTicket} />
+                <TicketContent {...ticket.results[0]} setTickets={setTicket} ticket />
             </Container>
         </div>
     )

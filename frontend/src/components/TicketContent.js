@@ -18,11 +18,13 @@ const TicketContent = (props) => {
         visibility,
         priority,
         created_at,
-        updated_at
+        updated_at,
+        ticket
     } = props;
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner
+    const is_supporter = currentUser?.role === "supporter"
 
     return (
         <Card>
@@ -38,7 +40,16 @@ const TicketContent = (props) => {
                 </Col>
                 <Col>
                     <div>
-                        <Sidebar status={status} visibility={visibility} priority={priority} requestor={owner} created_at={created_at} updated_at={updated_at} />
+                        <Sidebar 
+                            status={status} 
+                            visibility={visibility} 
+                            priority={priority} 
+                            requestor={owner} 
+                            created_at={created_at} 
+                            updated_at={updated_at}
+                            is_supporter={is_supporter}
+                            is_owner={is_owner}
+                        />
                     </div>
                 </Col>
             </Row>
