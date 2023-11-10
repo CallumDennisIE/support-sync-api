@@ -116,11 +116,15 @@ os.environ['DATABASE_URL'] = (The Database URLretrieved from the earlier steps)
 os.environ['SECRET_KEY'] = (Create a secret key to be used for the Django backend)
 ```
 
+- To install NPM, please run the following commands: <br>
+`cd frontend` <br>
+`npm install`
+
 ### Running the development environment
 
 - Open 2 terminals in the development environment.
-- In the first terminal, to start the backend, run the following:
+- In the first terminal, to start the backend, run the following: <br>
   `python manage.py runserver`
-- After the above command has completed, in the second terminal, run the following commands, to start the frontend:
-  `cd frontend`
+- After the above command has completed, in the second terminal, run the following commands, to start the frontend: <br>
+  `cd frontend` <br>
   `npm start`
