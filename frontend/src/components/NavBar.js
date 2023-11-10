@@ -1,7 +1,7 @@
-import React from 'react'
-import {Navbar, Nav} from "react-bootstrap"
+import React from 'react';
+import { Navbar, Nav } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
-import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContexts'
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContexts';
 import Avatar from './Avatar';
 import axios from "axios";
 
@@ -16,12 +16,12 @@ const NavBar = () => {
         } catch (err) {
             console.log(err);
         }
-    }
+    };
 
 
     const addTicketIcon = (
         <NavLink to="/create-ticket">Create Ticket</NavLink>
-    )
+    );
     const loggedOutIcons = (
         <>
             <NavLink to="/signin">Sign In</NavLink>
@@ -36,7 +36,7 @@ const NavBar = () => {
             </NavLink>
         </>
     );
-    
+
 
     return (
         <div>
@@ -47,14 +47,13 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <NavLink to="/tickets">View Tickets</NavLink>
                         {currentUser && addTicketIcon}
                         {currentUser ? loggedInIcons : loggedOutIcons}
                     </Nav>
                 </Navbar.Collapse>
-                </Navbar>
+            </Navbar>
         </div>
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;
