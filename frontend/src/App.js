@@ -16,7 +16,8 @@ function App() {
             <NavBar />
             <Container>
                 <Switch>
-                    <Route exact path="/" render={() => <TicketsPage message="No tickets found. Try a different search query." />} />
+                    <Route exact path="/" render={() => <h1>Welcome to Support Sync</h1>} />
+                    <Route exact path="/tickets/" render={() => <TicketsPage message="No tickets found. Try a different search query." />} />
                     <Route exact path="/tickets/:id" render={() => <Ticket />} />
                     <Route exact path="/create-ticket" render={() => <CreateTicket />} />
                     <Route exact path="/signin" render={() => <SignIn />} />
