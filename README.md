@@ -13,8 +13,9 @@
     - [Database Creation](#database-creation)
     - [Image Hosting](#image-hosting)
     - [Local Development](#local-development)
-    - [Setting up the development environment](#setting-up-the-development-environment)
-    - [Running the development environment](#running-the-development-environment)
+    - [Development Environment Setup](#development-environment-setup)
+    - [Running the Development Snvironment](#running-the-development-snvironment)
+    - [Compiling Static Files for Deployment](#compiling-static-files-for-deployment)
 
 ## Technologies Used
 
@@ -92,7 +93,7 @@ Steps to clone this project using GitHub:
 
 For more information on how to clone a GitHub repository please click [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-### Setting up the development environment
+### Development Environment Setup
 
 - The requirements in the requirements.txt wile will have to be installed, using the following command:
 
@@ -116,15 +117,24 @@ os.environ['DATABASE_URL'] = (The Database URLretrieved from the earlier steps)
 os.environ['SECRET_KEY'] = (Create a secret key to be used for the Django backend)
 ```
 
-- To install NPM, please run the following commands: <br>
-`cd frontend` <br>
-`npm install`
+- To install NPM, please run the following commands:  
+  `cd frontend`  
+  `npm install`
 
-### Running the development environment
+### Running the Development Snvironment
 
 - Open 2 terminals in the development environment.
-- In the first terminal, to start the backend, run the following: <br>
+- In the first terminal, to start the backend, run the following:  
   `python manage.py runserver`
-- After the above command has completed, in the second terminal, run the following commands, to start the frontend: <br>
-  `cd frontend` <br>
+- After the above command has completed, in the second terminal, run the following commands, to start the frontend:  
+  `cd frontend`  
   `npm start`
+
+### Compiling Static Files for Deployment
+
+- Before the project can be deployed, the relevant static files must be collected, after a change to the code is made. Both Django and NPM need to have their relevant static files collected.
+- To collect the Django static files run:  
+  `python3 manage.py collectstatic`
+- To collect the static files for the frontend, run the following:  
+  `cd frontend`  
+  `npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.`
