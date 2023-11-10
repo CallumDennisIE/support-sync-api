@@ -22,7 +22,7 @@ const ListTicketItem = (props) => {
                 <Card>
                     <Row>
                         <Col>
-                            <Card.Title>{ticket.id}{title}fjfhfjfjfju</Card.Title>
+                            <Card.Title>{ticket_id}{title}fjfhfjfjfju</Card.Title>
                             <Card.Text>{description}</Card.Text>
                         </Col>
                         <Col>
