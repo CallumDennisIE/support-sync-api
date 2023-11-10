@@ -22,7 +22,7 @@ const ListTicketItem = (props) => {
                 <Card>
                     <Row>
                         <Col>
-                            <Card.Title>{ticket_id}{title}fjfhfjfjfju</Card.Title>
+                            <Card.Title>{title}</Card.Title>
                             <Card.Text>{description}</Card.Text>
                         </Col>
                         <Col>
@@ -36,8 +36,8 @@ const ListTicketItem = (props) => {
                         </Col>
                     </Row>
                     <Card.Body>
-                        <Link to={`/tickets/${ticket_id}`}>
-                            <Button variant="primary">open Ticket</Button>
+                        <Link to={`/tickets/${id}`}>
+                            <Button variant="primary">Open Ticket</Button>
                         </Link>
                     </Card.Body>
                 </Card>
