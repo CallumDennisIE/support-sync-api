@@ -1,19 +1,20 @@
-import React from 'react'
-import Card from "react-bootstrap/Card"
-import Comment from './Comment'
-import Sidebar from './Sidebar'
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import Button from "react-bootstrap/Button"
-import { useCurrentUser } from '../contexts/CurrentUserContexts'
+import React from 'react';
+import Card from "react-bootstrap/Card";
+import Comment from './Comment';
+import Sidebar from './Sidebar';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import { useCurrentUser } from '../contexts/CurrentUserContexts';
+import { useHistory } from "react-router";
 
 const TicketContent = (props) => {
     const {
-        id, 
+        id,
         owner,
         ticket_id,
         title,
-        description, 
+        description,
         status,
         visibility,
         priority,
@@ -23,31 +24,32 @@ const TicketContent = (props) => {
     } = props;
 
     const currentUser = useCurrentUser();
-    const is_owner = currentUser?.username === owner
+    const is_owner = currentUser?.username === owner;
+    const history = useHistory();
 
     return (
         <div>
             <Card>
                 <Card.Title>{title}</Card.Title>
                 <Row>
-                    <Col><Button variant="primary">Assign</Button></Col>
+                    <Button variant="primary" onClick={() => history.goBack()}>
+                        Cancel
+                    </Button>
                 </Row>
                 <Row>
                     <Col>
                         <div>
-                        <Card.Text>{description}</Card.Text>
+                            <Card.Text>{description}</Card.Text>
                         </div>
                     </Col>
                     <Col>
                         <div>
-                            <Sidebar 
-                                status={status} 
-                                visibility={visibility} 
-                                priority={priority} 
-                                requestor={owner} 
-                                created_at={created_at} 
+                            <Sidebar
+                                status={status}
+                                priority={priority}
+                                requestor={owner}
+                                created_at={created_at}
                                 updated_at={updated_at}
-                                is_supporter={false}
                                 is_owner={is_owner}
                             />
                         </div>
@@ -59,8 +61,8 @@ const TicketContent = (props) => {
                             <h3>Comments</h3>
                             <Row>
                                 <Col>
-                                    <Comment user="Callum Dennis" role="Supporter" comment="this is callums comment"/>
-                                    <Comment user="ABC Tech" role="Requestor" comment="this is ABC Tech's comment"/>
+                                    <Comment user="Callum Dennis" role="Supporter" comment="this is callums comment" />
+                                    <Comment user="ABC Tech" role="Requestor" comment="this is ABC Tech's comment" />
                                 </Col>
                             </Row>
                         </div>
@@ -68,7 +70,7 @@ const TicketContent = (props) => {
                 </Row>
             </Card>
         </div>
-    )
-}
+    );
+};
 
-export default TicketContent
+export default TicketContent;

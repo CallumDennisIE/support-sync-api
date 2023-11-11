@@ -4,14 +4,11 @@ import Button from "react-bootstrap/Button";
 import TicketContent from "./TicketContent";
 import { useParams } from 'react-router';
 import { axiosReq } from '../api/axiosDefaults';
-import { useHistory } from "react-router";
 
 const Ticket = () => {
 
     const { id } = useParams();
     const [ticket, setTicket] = useState({ results: [] });
-
-    const history = useHistory();
 
     useEffect(() => {
         const handleMount = async () => {
@@ -31,9 +28,6 @@ const Ticket = () => {
         <div>
             <Container>
                 <TicketContent {...ticket.results[0]} setTickets={setTicket} ticket />
-                <Button variant="primary" onClick={() => history.goBack()}>
-                    Cancel
-                </Button>
             </Container>
         </div>
     );

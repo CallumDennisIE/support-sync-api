@@ -28,10 +28,8 @@ const ListTicketItem = (props) => {
                         <Col>
                             <ListGroup>
                                 <ListGroup.Item><i className="fa-regular fa-circle-check"></i> {status}</ListGroup.Item>
-                                <ListGroup.Item><i className="fa-regular fa-eye"></i> {visibility}</ListGroup.Item>
                                 <ListGroup.Item><i className="fa-solid fa-bullhorn"></i> {priority}</ListGroup.Item>
                                 <ListGroup.Item><i className="fa-regular fa-address-book"></i> {owner}</ListGroup.Item>
-                                <ListGroup.Item><i className="fa-regular fa-user"></i> Callum Dennis</ListGroup.Item>
                             </ListGroup>
                         </Col>
                     </Row>
