@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
 import { useHistory } from "react-router";
 import { MoreDropdown } from './MoreDropdown';
+import { axiosRes } from '../api/axiosDefaults';
 
 const TicketContent = (props) => {
     const {
@@ -28,6 +29,19 @@ const TicketContent = (props) => {
     const is_owner = currentUser?.username === owner;
     const history = useHistory();
 
+    const handleEdit = () => {
+        history.push(`/tickets/${id}/edit`);
+    };
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/tickets/${id}/`);
+            history.goBack();
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
         <div>
             <Card>
@@ -39,7 +53,12 @@ const TicketContent = (props) => {
                         </Button>
                     </Col>
                     <Col>
-                        {is_owner && <MoreDropdown />}
+                        {is_owner && (
+                            <MoreDropdown
+                                handleEdit={handleEdit}
+                                handleDelete={handleDelete}
+                            />
+                        )}
                     </Col>
                 </Row>
                 <Row>
