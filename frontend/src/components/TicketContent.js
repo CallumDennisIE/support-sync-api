@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
 import { useHistory } from "react-router";
+import { MoreDropdown } from './MoreDropdown';
 
 const TicketContent = (props) => {
     const {
@@ -32,9 +33,14 @@ const TicketContent = (props) => {
             <Card>
                 <Card.Title>{title}</Card.Title>
                 <Row>
-                    <Button variant="primary" onClick={() => history.goBack()}>
-                        Cancel
-                    </Button>
+                    <Col>
+                        <Button variant="primary" onClick={() => history.goBack()}>
+                            Back
+                        </Button>
+                    </Col>
+                    <Col>
+                        {is_owner && <MoreDropdown />}
+                    </Col>
                 </Row>
                 <Row>
                     <Col>
