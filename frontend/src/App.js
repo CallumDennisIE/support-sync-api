@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import { Route, Switch } from 'react-router-dom';
 import './api/axiosDefaults';
 import TicketsPage from './components/TicketsPage';
+import EditTicket from './components/EditTicket';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                     <Route exact path="/" render={() => <h1>Welcome to Support Sync</h1>} />
                     <Route exact path="/tickets/" render={() => <TicketsPage message="No tickets found. Try a different search query." />} />
                     <Route exact path="/tickets/:id" render={() => <Ticket />} />
+                    <Route exact path="/tickets/:id/edit" render={() => <EditTicket />} />
                     <Route exact path="/create-ticket" render={() => <CreateTicket />} />
                     <Route exact path="/signin" render={() => <SignIn />} />
                     <Route exact path="/signup" render={() => <SignUp />} />
