@@ -52,7 +52,7 @@ const EditTicket = () => {
 
         formData.append("title", title);
         formData.append("description", description);
-        formData.append("status", status);
+        formData.append("status", status.toLowerCase());
         formData.append("priority", priority.toLowerCase());
 
         try {
@@ -95,9 +95,9 @@ const EditTicket = () => {
                                 value={status}
                                 onChange={handleChange}
                             >
-                                <option>Low</option>
-                                <option>Medium</option>
-                                <option>High</option>
+                                <option>New Request</option>
+                                <option>In Progress</option>
+                                <option>Completed</option>
                             </Form.Control>
                         </Form.Group>
                         {errors?.status?.map((message, idx) => (

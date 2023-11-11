@@ -12,50 +12,32 @@ const Sidebar = (props) => {
                 <ListGroup.Item>
                     <Row>
                         <Col>
-                            <i class="fa-regular fa-circle-check"></i>
+                            <i className="fa-regular fa-circle-check"></i>
                         </Col>
                         <Col>
                             <p>Status</p>
                         </Col>
                         <Col>
-                            <Dropdown>
-                                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                    {props.status}
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-1">New Request</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">In Progress</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Completed</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <span className="badge badge-primary">{props.status}</span>
                         </Col>
                     </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                     <Row>
-                        <Col><i class="fa-solid fa-bullhorn"></i></Col>
+                        <Col><i className="fa-solid fa-bullhorn"></i></Col>
                         <Col>Priority:</Col>
                         <Col>
-                            <Dropdown>
-                                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                    {props.priority}
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-1">Low</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">Medium</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">High</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <span className="badge badge-primary">{props.priority}</span>
                         </Col>
                     </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                     <Row>
-                        <Col><i class="fa-regular fa-address-book"></i></Col>
+                        <Col><i className="fa-regular fa-address-book"></i></Col>
                         <Col>Requestor:</Col>
-                        <Col><Button variant="success">{props.requestor}</Button></Col>
+                        <Col>
+                            <span className="badge badge-primary">{props.requestor}</span>
+                        </Col>
                     </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
