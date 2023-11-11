@@ -8,6 +8,8 @@ import Container from "react-bootstrap/Container";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../api/axiosDefaults";
 import ListTicketItem from "./ListTicketItem";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../utils/utils";
 
 
 function TicketsPage({message, filter=""}) {
@@ -36,9 +38,17 @@ function TicketsPage({message, filter=""}) {
                 {hasLoaded ? (
                     <>
                         {tickets.results.length ? (
-                            tickets.results.map((ticket) => (
-                                <ListTicketItem key={ticket.id} {...ticket} />
-                            ))
+                            <InfiniteScroll 
+                                children={
+                                     tickets.results.map((ticket) => (
+                                        <ListTicketItem key={ticket.id} {...ticket} />
+                                    ))
+                                }
+                                dataLength={tickets.results.length}
+                                loader={<Asset spinner />}
+                                hasMore={!!tickets.next}
+                                next={() => fetchMoreData(tickets, setTickets)}
+                            />
                         ) : (<p>Sorry there is no results</p>)}
                     </>
                 ) : (
