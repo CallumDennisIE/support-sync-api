@@ -89,7 +89,8 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'corsheaders',
     'profiles',
-    'tickets'
+    'tickets',
+    'comments'
 ]
 SITE_ID = 1
 MIDDLEWARE = [
