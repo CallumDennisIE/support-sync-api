@@ -95,8 +95,9 @@ const EditTicket = () => {
                                 value={status}
                                 onChange={handleChange}
                             >
-                                <option>New Request</option>
-                                <option>In Progress</option>
+                                <option>New</option>
+                                <option value="in_progress">In Progress</option>
+                                <option>Blocked</option>
                                 <option>Completed</option>
                             </Form.Control>
                         </Form.Group>
