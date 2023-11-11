@@ -31,9 +31,11 @@ const TicketContent = (props) => {
 
     const handleEdit = () => {
         history.push(`/tickets/${id}/edit`);
+        console.log('Editing ticket...');
     };
 
     const handleDelete = async () => {
+        console.log('Deleting ticket...');
         try {
             await axiosRes.delete(`/tickets/${id}/`);
             history.goBack();
