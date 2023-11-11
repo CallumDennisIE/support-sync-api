@@ -16,6 +16,7 @@
     - [Development Environment Setup](#development-environment-setup)
     - [Running the Development Snvironment](#running-the-development-snvironment)
     - [Compiling Static Files for Deployment](#compiling-static-files-for-deployment)
+    - [Project Deployment](#project-deployment)
 
 ## Technologies Used
 
@@ -106,13 +107,13 @@ import os
 
 os.environ['DEV'] = '1'
 
-os.environ['ALLOWED_HOST'] = (The URL of the development environment, without the 'https://' and the trailing '/' )
+os.environ['ALLOWED_HOST'] = (The URL of the development environment, without the 'https://' and the trailing '/')
 
 os.environ['CLIENT_ORIGIN'] = (The URL of the development environment, including the 'https://' but without the trailing '/')
 
 os.environ['CLOUDINARY_URL'] = (The URL for Cloudinary, that was retrieved in the earlier steps)
 
-os.environ['DATABASE_URL'] = (The Database URLretrieved from the earlier steps)
+os.environ['DATABASE_URL'] = (The Database URL retrieved from the earlier steps)
 
 os.environ['SECRET_KEY'] = (Create a secret key to be used for the Django backend)
 ```
@@ -138,3 +139,17 @@ os.environ['SECRET_KEY'] = (Create a secret key to be used for the Django backen
 - To collect the static files for the frontend, run the following:  
   `cd frontend`  
   `npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.`
+
+### Project Deployment
+
+- Heroku was used for deploying this project.
+- After creating a new app in Heroku, create the following 'Config Vars' in the 'Settings' of the app:
+  - `ALLOWED_HOST` = The URL of the deployed project, without the 'https://' and the trailing '/'
+  - `CLIENT_ORIGIN` = The URL of the deployed project, including the 'https://' but without the trailing '/'
+  - `CLOUDINARY_URL` = The URL for Cloudinary, that was retrieved in the earlier steps
+  - `DATABASE_URL` = The Database URL retrieved from the earlier steps
+  - `DISABLE_COLLECTSTATIC` = `1`
+  - `SECRET_KEY` = The Django secret key, retrieved from the earlier steps
+- In the 'Deploy' section of the app, select 'GitHub' as the 'Deployment method'
+- Copy and paste the URL of the GitHub cloned repository to link it to the app.
+- Click 'Deploy Branch' in the 'Manual deploy' section
