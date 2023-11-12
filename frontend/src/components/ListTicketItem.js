@@ -13,15 +13,10 @@ const ListTicketItem = (props) => {
     const {
         id,
         owner,
-        ticket_id,
         title,
         description,
         status,
-        visibility,
         priority,
-        created_at,
-        updated_at,
-        ticket
     } = props;
     return (
         <div>

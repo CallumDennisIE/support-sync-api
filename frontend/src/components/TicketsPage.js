@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation } from "react-router";
+
 import { axiosReq } from "../api/axiosDefaults";
 import { fetchMoreData } from "../utils/utils";
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
@@ -14,7 +15,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from './Asset';
 import ListTicketItem from "./ListTicketItem";
 
-function TicketsPage({ message, filter = "" }) {
+
+function TicketsPage({ filter = "" }) {
     const [tickets, setTickets] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();

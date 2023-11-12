@@ -17,6 +17,7 @@
     - [Running the Development Snvironment](#running-the-development-snvironment)
     - [Compiling Static Files for Deployment](#compiling-static-files-for-deployment)
     - [Project Deployment](#project-deployment)
+  - [Testing](#testing)
 
 ## Technologies Used
 
@@ -153,3 +154,7 @@ os.environ['SECRET_KEY'] = (Create a secret key to be used for the Django backen
 - In the 'Deploy' section of the app, select 'GitHub' as the 'Deployment method'
 - Copy and paste the URL of the GitHub cloned repository to link it to the app.
 - Click 'Deploy Branch' in the 'Manual deploy' section
+
+## Testing
+
+- Code ran through ESLint linter without warnings
