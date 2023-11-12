@@ -6,6 +6,7 @@
 
 - [Support Sync](#support-sync)
   - [Contents](#contents)
+  - [About](#about)
   - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks, Software and Programs](#frameworks-software-and-programs)
@@ -18,6 +19,10 @@
     - [Compiling Static Files for Deployment](#compiling-static-files-for-deployment)
     - [Project Deployment](#project-deployment)
   - [Testing](#testing)
+
+## About
+
+SupportSync is a powerful and intuitive ticketing system designed to streamline technical issue tracking and resolution within your organization. Whether you're managing IT support requests, troubleshooting technical challenges, or coordinating tasks across various departments, SupportSync provides a robust platform to enhance communication and collaboration.
 
 ## Technologies Used
 
