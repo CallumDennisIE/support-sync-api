@@ -7,6 +7,9 @@ import { axiosReq } from '../api/axiosDefaults';
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
 import CommentCreateForm from "./CreateComment";
 import Comment from './Comment';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Asset from './Asset';
+import { fetchMoreData } from "../utils/utils";
 
 const Ticket = () => {
 
@@ -49,14 +52,20 @@ const Ticket = () => {
                     "Comments"
                 ) : null}
                 {comments.results.length ? (
-                    comments.results.map(comment => (
-                        <Comment
-                            key={comment.id}
-                            {...comment}
-                            setTicket={setTicket}
-                            setComments={setComments}
-                        />
-                    ))
+                    <InfiniteScroll
+                        children={comments.results.map((comment) => (
+                            <Comment
+                                key={comment.id}
+                                {...comment}
+                                setTicket={setTicket}
+                                setComments={setComments}
+                            />
+                        ))}
+                        dataLength={comments.results.length}
+                        loader={<Asset spinner />}
+                        hasMore={!!comments.next}
+                        next={() => fetchMoreData(comments, setComments)}
+                    />
                 ) : currentUser ? (
                     <span>No comments yet, be the first to comment</span>
                 ) : (
