@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+
 import { Link } from "react-router-dom";
+import { axiosRes } from "../api/axiosDefaults";
 
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
 import Avatar from "./Avatar";
-import { axiosRes } from "../api/axiosDefaults";
+
 
 function CreateComment(props) {
     const { ticket, setTicket, setComments, profileImage, profile_id } = props;

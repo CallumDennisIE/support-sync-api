@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import TicketContent from "./TicketContent";
+
+import { fetchMoreData } from "../utils/utils";
 import { useParams } from 'react-router';
 import { axiosReq } from '../api/axiosDefaults';
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
+
+import Container from "react-bootstrap/Container";
+
+import InfiniteScroll from 'react-infinite-scroll-component';
+
+import TicketContent from "./TicketContent";
 import CommentCreateForm from "./CreateComment";
 import Comment from './Comment';
-import InfiniteScroll from 'react-infinite-scroll-component';
 import Asset from './Asset';
-import { fetchMoreData } from "../utils/utils";
 
 const Ticket = () => {
 

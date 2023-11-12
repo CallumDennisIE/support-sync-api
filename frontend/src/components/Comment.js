@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+
+import { axiosRes } from '../api/axiosDefaults';
+import { useCurrentUser } from '../contexts/CurrentUserContexts';
+
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
 import Avatar from './Avatar';
-import { useCurrentUser } from '../contexts/CurrentUserContexts';
 import { MoreDropdown } from './MoreDropdown';
-import { axiosRes } from '../api/axiosDefaults';
 import EditComment from './EditComment';
 
 const Comment = (props) => {

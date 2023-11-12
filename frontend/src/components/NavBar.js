@@ -1,10 +1,14 @@
 import React from 'react';
-import { Navbar, Nav } from "react-bootstrap";
-import { NavLink } from 'react-router-dom';
-import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContexts';
-import Avatar from './Avatar';
+
 import axios from "axios";
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContexts';
+import { NavLink } from 'react-router-dom';
 import { removeTokenTimestamp } from '../utils/utils';
+
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+
+import Avatar from './Avatar';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();

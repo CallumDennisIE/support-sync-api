@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-
-import Container from "react-bootstrap/Container"
-import Card from "react-bootstrap/Card"
-import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/Button"
-import Alert from "react-bootstrap/Alert"
+import React, { useState } from 'react';
 
 import { useHistory } from "react-router";
 import { axiosReq } from "../api/axiosDefaults";
 
+import Container from "react-bootstrap/Container";
+import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
 const CreateTicket = () => {
 
@@ -20,14 +19,14 @@ const CreateTicket = () => {
         title: "",
         description: "",
         priority: "",
-      });
-    const { title, description, priority } = ticketData;
-    
-    const handleChange = (event) => {
-    setTicketData({
-        ...ticketData,
-        [event.target.name]: event.target.value,
     });
+    const { title, description, priority } = ticketData;
+
+    const handleChange = (event) => {
+        setTicketData({
+            ...ticketData,
+            [event.target.name]: event.target.value,
+        });
     };
 
     const handleSubmit = async (event) => {
@@ -57,12 +56,12 @@ const CreateTicket = () => {
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label>Ticket Title:</Form.Label>
-                            <Form.Control 
-                                type="text" 
-                                placeholder="Help with abc.." 
-                                name="title" 
-                                value={title} 
-                                onChange={handleChange} 
+                            <Form.Control
+                                type="text"
+                                placeholder="Help with abc.."
+                                name="title"
+                                value={title}
+                                onChange={handleChange}
                             />
                         </Form.Group>
                         {errors?.title?.map((message, idx) => (
@@ -72,9 +71,9 @@ const CreateTicket = () => {
                         ))}
                         <Form.Group>
                             <Form.Label>Priority:</Form.Label>
-                            <Form.Control 
-                                as="select" 
-                                name="priority" 
+                            <Form.Control
+                                as="select"
+                                name="priority"
                                 value={priority}
                                 onChange={handleChange}
                             >
@@ -90,13 +89,13 @@ const CreateTicket = () => {
                         ))}
                         <Form.Group>
                             <Form.Label>Description:</Form.Label>
-                            <Form.Control 
-                                as="textarea" 
-                                rows={3} 
-                                placeholder="Hello Support, could you please help abc.." 
-                                name="description" 
-                                value={description} 
-                                onChange={handleChange} 
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                placeholder="Hello Support, could you please help abc.."
+                                name="description"
+                                value={description}
+                                onChange={handleChange}
                             />
                         </Form.Group>
                         {errors?.description?.map((message, idx) => (
@@ -114,7 +113,7 @@ const CreateTicket = () => {
                 </Card>
             </Container>
         </div>
-    )
-}
+    );
+};
 
-export default CreateTicket
+export default CreateTicket;

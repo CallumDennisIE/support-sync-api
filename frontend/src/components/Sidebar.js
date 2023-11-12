@@ -1,9 +1,8 @@
 import React from 'react';
+
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Dropdown from "react-bootstrap/Dropdown";
 import ListGroup from "react-bootstrap/ListGroup";
-import Button from "react-bootstrap/Button";
 
 const Sidebar = (props) => {
     return (

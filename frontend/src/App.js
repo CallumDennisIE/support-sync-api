@@ -1,16 +1,18 @@
+
+import { Route, Switch } from 'react-router-dom';
+import './api/axiosDefaults';
+import Container from "react-bootstrap/Container";
+
 import './App.css';
+
 import CreateTicket from './components/CreateTicket';
 import Ticket from './components/Ticket';
 import NavBar from './components/NavBar';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import Container from "react-bootstrap/Container";
-import { Route, Switch } from 'react-router-dom';
-import './api/axiosDefaults';
 import TicketsPage from './components/TicketsPage';
 import EditTicket from './components/EditTicket';
 import NotFound from './components/NotFound';
-
 
 function App() {
     return (

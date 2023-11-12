@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import { useHistory } from "react-router";
+import { useCurrentUser } from '../contexts/CurrentUserContexts';
+import { axiosRes } from '../api/axiosDefaults';
+
 import Card from "react-bootstrap/Card";
-import Sidebar from './Sidebar';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import { useCurrentUser } from '../contexts/CurrentUserContexts';
-import { useHistory } from "react-router";
+
+import Sidebar from './Sidebar';
 import { MoreDropdown } from './MoreDropdown';
-import { axiosRes } from '../api/axiosDefaults';
 
 const TicketContent = (props) => {
     const {
