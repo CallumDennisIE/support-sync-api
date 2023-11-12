@@ -22,18 +22,11 @@ const ListTicketItem = (props) => {
         <div>
             <Container>
                 <Card>
+                    <Card.Title>{title}</Card.Title>
                     <Row>
-                        <Col>
-                            <Card.Title>{title}</Card.Title>
-                            <Card.Text>{description}</Card.Text>
-                        </Col>
-                        <Col>
-                            <ListGroup>
-                                <ListGroup.Item><i className="fa-regular fa-circle-check"></i> {status}</ListGroup.Item>
-                                <ListGroup.Item><i className="fa-solid fa-bullhorn"></i> {priority}</ListGroup.Item>
-                                <ListGroup.Item><i className="fa-regular fa-address-book"></i> {owner}</ListGroup.Item>
-                            </ListGroup>
-                        </Col>
+                        <Col><i className="fa-regular fa-circle-check"></i> {status}</Col>
+                        <Col><i className="fa-solid fa-bullhorn"></i> {priority}</Col>
+                        <Col><i className="fa-regular fa-address-book"></i> {owner}</Col>
                     </Row>
                     <Card.Body>
                         <Link to={`/tickets/${id}`}>
@@ -42,7 +35,7 @@ const ListTicketItem = (props) => {
                     </Card.Body>
                 </Card>
             </Container>
-        </div>
+        </div >
     );
 };
 
