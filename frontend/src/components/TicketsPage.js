@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../api/axiosDefaults";
 import { fetchMoreData } from "../utils/utils";
+import { useCurrentUser } from '../contexts/CurrentUserContexts';
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -17,6 +18,7 @@ function TicketsPage({ message, filter = "" }) {
     const [tickets, setTickets] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
+    const currentUser = useCurrentUser();
 
     useEffect(() => {
         const fetchTickets = async () => {
@@ -30,7 +32,7 @@ function TicketsPage({ message, filter = "" }) {
         };
         setHasLoaded(false);
         fetchTickets();
-    }, [filter, pathname]);
+    }, [filter, pathname, currentUser]);
 
     return (
         <Row className="h-100">
