@@ -6,11 +6,6 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 const Sidebar = (props) => {
 
-
-    let status = props.status.charAt(0).toUpperCase() + props.status.slice(1);
-    const priority = props.priority.charAt(0).toUpperCase() + props.priority.slice(1);
-    const requestor = props.requestor.charAt(0).toUpperCase() + props.requestor.slice(1);
-
     return (
         <div>
             <ListGroup>
@@ -20,7 +15,7 @@ const Sidebar = (props) => {
                             <i className="fa-regular fa-circle-check"></i> Status:
                         </Col>
                         <Col>
-                            <span className="btn btn-primary">{status}</span>
+                            <span className="btn btn-primary">{props.status}</span>
                         </Col>
                     </Row>
                 </ListGroup.Item>
@@ -30,7 +25,7 @@ const Sidebar = (props) => {
                             <i className="fa-solid fa-bullhorn"></i> Priority:
                         </Col>
                         <Col>
-                            <span className="btn btn-primary">{priority}</span>
+                            <span className="btn btn-primary">{props.priority}</span>
                         </Col>
                     </Row>
                 </ListGroup.Item>
@@ -40,7 +35,7 @@ const Sidebar = (props) => {
                             <i className="fa-regular fa-address-book"></i> Requestor:
                         </Col>
                         <Col>
-                            <span className="btn btn-primary">{requestor}</span>
+                            <span className="btn btn-primary">{props.requestor}</span>
                         </Col>
                     </Row>
                 </ListGroup.Item>
