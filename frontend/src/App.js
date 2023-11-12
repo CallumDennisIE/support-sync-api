@@ -9,6 +9,7 @@ import { Route, Switch } from 'react-router-dom';
 import './api/axiosDefaults';
 import TicketsPage from './components/TicketsPage';
 import EditTicket from './components/EditTicket';
+import NotFound from './components/NotFound';
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
                     <Route exact path="/create-ticket" render={() => <CreateTicket />} />
                     <Route exact path="/signin" render={() => <SignIn />} />
                     <Route exact path="/signup" render={() => <SignUp />} />
-                    <Route render={() => <p>Page not found</p>} />
+                    <Route render={() => <NotFound />} />
                 </Switch>
             </Container>
         </div>
