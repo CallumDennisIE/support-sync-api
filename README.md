@@ -18,6 +18,11 @@
       - [Delete Ticket User Story](#delete-ticket-user-story)
       - [List Tickets User Story](#list-tickets-user-story)
       - [Ticket Detail View User Story](#ticket-detail-view-user-story)
+    - [Comment Control Sprint](#comment-control-sprint)
+      - [Create Comment User Story](#create-comment-user-story)
+      - [Edit Comment User Story](#edit-comment-user-story)
+      - [Delete Comment User Story](#delete-comment-user-story)
+      - [List Comments User Story](#list-comments-user-story)
   - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks, Software and Programs](#frameworks-software-and-programs)
@@ -77,6 +82,24 @@ As a Requestor/Supporter, I would like to be able to list all tickets. I would e
 #### [Ticket Detail View User Story](https://github.com/CallumDennisIE/support-sync-api/issues/7)
 
 As a Requestor/Supporter, I would like to be able to view a detailed page containing the ticket description, title, status and priority, requestor.
+
+### [Comment Control Sprint](https://github.com/CallumDennisIE/support-sync-api/milestone/3?closed=1)
+
+#### [Create Comment User Story](https://github.com/CallumDennisIE/support-sync-api/issues/9)
+
+As a Requestor/Supporter, I would like to be able to create a comments on a ticket. To be able to provide more information / assist the requestor.
+
+#### [Edit Comment User Story](https://github.com/CallumDennisIE/support-sync-api/issues/11)
+
+As a Requestor/Supporter, I would like to be able to edit comments I have created, allowing me to edit mistakes.
+
+#### [Delete Comment User Story](https://github.com/CallumDennisIE/support-sync-api/issues/10)
+
+As a Requestor / Supporter, I would like to be able to delete my own comments, in case I have provided the incorrect information.
+
+#### [List Comments User Story](https://github.com/CallumDennisIE/support-sync-api/issues/8)
+
+As a Requestor/Supporter, I would like to be able to list all comments on a ticket. To be able to see the discussion and assistance given on a ticket.
 
 ## Technologies Used
 
