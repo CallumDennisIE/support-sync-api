@@ -33,7 +33,7 @@ const Ticket = () => {
                 setTicket({ results: [ticket] });
                 setComments(comments);
             } catch (err) {
-                console.log(err);
+                //console.log(err);
             }
         };
         handleMount();

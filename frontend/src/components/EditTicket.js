@@ -23,7 +23,7 @@ const EditTicket = () => {
 
                 is_owner ? setTicketData({ title, description, status, priority }) : history.push('/');
             } catch (err) {
-                console.log(err);
+                //console.log(err);
             }
         };
 
@@ -58,7 +58,7 @@ const EditTicket = () => {
             await axiosReq.put(`/tickets/${id}`, formData);
             history.push(`/tickets/${id}`);
         } catch (err) {
-            console.log(err);
+            //console.log(err);
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }

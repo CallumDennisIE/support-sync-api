@@ -25,7 +25,7 @@ function TicketsPage({ message, filter = "" }) {
                 setTickets(data);
                 setHasLoaded(true);
             } catch (err) {
-                console.log(err);
+                //console.log(err);
             }
         };
         setHasLoaded(false);
