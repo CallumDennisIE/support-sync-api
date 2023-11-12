@@ -7,6 +7,11 @@
 - [Support Sync](#support-sync)
   - [Contents](#contents)
   - [About](#about)
+  - [User Stories](#user-stories)
+    - [User Authentication \& Profiles Sprint](#user-authentication--profiles-sprint)
+      - [Create Account User Story](#create-account-user-story)
+      - [Sign In User Story](#sign-in-user-story)
+      - [Sign Out User Story](#sign-out-user-story)
   - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks, Software and Programs](#frameworks-software-and-programs)
@@ -23,6 +28,27 @@
 ## About
 
 SupportSync is a powerful and intuitive ticketing system designed to streamline technical issue tracking and resolution within your organization. Whether you're managing IT support requests, troubleshooting technical challenges, or coordinating tasks across various departments, SupportSync provides a robust platform to enhance communication and collaboration.
+
+## User Stories
+
+The User Stories in this project have been tracked using a GitHub Project for a Kanban board and also GitHub Milestones to track the progress of individual sprints.
+[View the User Story GitHub Project here](https://github.com/users/CallumDennisIE/projects/6)
+
+### [User Authentication & Profiles Sprint](https://github.com/CallumDennisIE/support-sync-api/milestone/1?closed=1)
+
+#### [Create Account User Story](https://github.com/CallumDennisIE/support-sync-api/issues/1)
+
+As a Requestor, I would like to be able to sign up to create a new account. I would expect to fill in my username and provide a password, that I could later use to sign in. The sign up form should have appropriate validation to ensure the correct values are passed. I should be visually notified when I have signed up.
+
+As a Supporter, I would expect an admin to create my user credentials, to avoid requestors having access to create supporter accounts.
+
+#### [Sign In User Story](https://github.com/CallumDennisIE/support-sync-api/issues/3)
+
+As a Requestor/Supporter, I would like to be able to sign in using my credentials created while signing up. The sign up form should have appropriate validation to ensure the correct values are passed. I should be visually notified when I have signed up.
+
+#### [Sign Out User Story](https://github.com/CallumDennisIE/support-sync-api/issues/14)
+
+As a Requestor/Supporter, I would like to be able to sign out of my account when I want to stop accessing information locked to me
 
 ## Technologies Used
 
@@ -59,6 +85,8 @@ SupportSync is a powerful and intuitive ticketing system designed to streamline 
 - [Miro](https://miro.com/) - Visual project management and planning
 
 - [Figma](https://www.figma.com/) - Site and element planning / wireframing
+
+- [ChatGPT](https://chat.openai.com/) - Used to create sample content for tickets and comments.
 
 ## Deployment & Local Development
 
