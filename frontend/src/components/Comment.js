@@ -67,7 +67,7 @@ const Comment = (props) => {
                                     )}</Card.Body>
                                 </Col>
                                 <Col>
-                                    {is_owner && !showEditForm(
+                                    {is_owner && !showEditForm && (
                                         <MoreDropdown handleEdit={() => setShowEditForm(true)} handleDelete={handleDelete} />
                                     )}
                                 </Col>
