@@ -6,6 +6,7 @@ import { useParams } from 'react-router';
 import { axiosReq } from '../api/axiosDefaults';
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
 import CommentCreateForm from "./CreateComment";
+import Comment from './Comment';
 
 const Ticket = () => {
 
@@ -49,9 +50,7 @@ const Ticket = () => {
                 ) : null}
                 {comments.results.length ? (
                     comments.results.map(comment => (
-                        <p key={comment.id}>
-                            {comment.owner}: {comment.content}
-                        </p>
+                        <Comment key={comment.id} {...comment} />
                     ))
                 ) : currentUser ? (
                     <span>No comments yet, be the first to comment</span>
