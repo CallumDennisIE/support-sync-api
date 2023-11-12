@@ -38,9 +38,7 @@ const NavBar = () => {
         <>
             <NavLink to="/tickets">View Tickets</NavLink>
             <NavLink to="/" onClick={handleSignOut}>Log Out</NavLink>
-            <NavLink to={`/profiles/${currentUser?.profile_id}`}>
-                <Avatar src={currentUser?.profile_image} text="My Profile" height={40} />
-            </NavLink>
+            <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
         </>
     );
 
