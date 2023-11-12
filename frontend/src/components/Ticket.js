@@ -19,10 +19,12 @@ const Ticket = () => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: ticket }] = await Promise.all([
-                    axiosReq.get(`/tickets/${id}`)
+                const [{ data: ticket }, { data: comments }] = await Promise.all([
+                    axiosReq.get(`/tickets/${id}`),
+                    axiosReq.get(`/comments/?ticket=${id}`)
                 ]);
                 setTicket({ results: [ticket] });
+                setComments(comments);
             } catch (err) {
                 console.log(err);
             }
@@ -45,8 +47,19 @@ const Ticket = () => {
                 ) : comments.results.length ? (
                     "Comments"
                 ) : null}
+                {comments.results.length ? (
+                    comments.results.map(comment => (
+                        <p key={comment.id}>
+                            {comment.owner}: {comment.content}
+                        </p>
+                    ))
+                ) : currentUser ? (
+                    <span>No comments yet, be the first to comment</span>
+                ) : (
+                    <span>No comments...yet</span>
+                )}
             </Container>
-        </div>
+        </div >
     );
 };
 
