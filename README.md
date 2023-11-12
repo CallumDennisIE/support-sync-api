@@ -12,6 +12,12 @@
       - [Create Account User Story](#create-account-user-story)
       - [Sign In User Story](#sign-in-user-story)
       - [Sign Out User Story](#sign-out-user-story)
+    - [Ticket Control Sprint](#ticket-control-sprint)
+      - [Create Ticket User Story](#create-ticket-user-story)
+      - [Edit Ticket User Story](#edit-ticket-user-story)
+      - [Delete Ticket User Story](#delete-ticket-user-story)
+      - [List Tickets User Story](#list-tickets-user-story)
+      - [Ticket Detail View User Story](#ticket-detail-view-user-story)
   - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks, Software and Programs](#frameworks-software-and-programs)
@@ -49,6 +55,28 @@ As a Requestor/Supporter, I would like to be able to sign in using my credential
 #### [Sign Out User Story](https://github.com/CallumDennisIE/support-sync-api/issues/14)
 
 As a Requestor/Supporter, I would like to be able to sign out of my account when I want to stop accessing information locked to me
+
+### [Ticket Control Sprint](https://github.com/CallumDennisIE/support-sync-api/milestone/2?closed=1)
+
+#### [Create Ticket User Story](https://github.com/CallumDennisIE/support-sync-api/issues/5)
+
+As a Requestor, I would like to be able to submit a form to create a new ticket. This would have to be fully validated for user inputs. I would like to input the title, description and starting priority.
+
+#### [Edit Ticket User Story](https://github.com/CallumDennisIE/support-sync-api/issues/13)
+
+As a Requestor/Supporter, I would like to be able to edit a ticket, including the description, title, status and priority
+
+#### [Delete Ticket User Story](https://github.com/CallumDennisIE/support-sync-api/issues/12)
+
+As a requestor, I would like to be able to delete a ticket that I own. I would expect not to see that ticket appear when viewing tickets.
+
+#### [List Tickets User Story](https://github.com/CallumDennisIE/support-sync-api/issues/6)
+
+As a Requestor/Supporter, I would like to be able to list all tickets. I would expect to be able to click on a individual ticket to get more information.
+
+#### [Ticket Detail View User Story](https://github.com/CallumDennisIE/support-sync-api/issues/7)
+
+As a Requestor/Supporter, I would like to be able to view a detailed page containing the ticket description, title, status and priority, requestor.
 
 ## Technologies Used
 
