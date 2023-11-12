@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,10 +6,13 @@ import Avatar from './Avatar';
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
 import { MoreDropdown } from './MoreDropdown';
 import { axiosRes } from '../api/axiosDefaults';
+import EditComment from './EditComment';
 
 const Comment = (props) => {
     const { profile_id, profile_image, owner, updated_at, content,
         id, setTicket, setComments } = props;
+
+    const [showEditForm, setShowEditForm] = useState(false);
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
@@ -50,9 +53,22 @@ const Comment = (props) => {
                                     <p>{updated_at}</p>
                                 </Col>
                                 <Col>
-                                    <Card.Body>{content}</Card.Body>
-                                    {is_owner && (
-                                        <MoreDropdown handleEdit={() => { }} handleDelete={handleDelete} />
+                                    <Card.Body>{showEditForm ? (
+                                        <EditComment
+                                            id={id}
+                                            profile_id={profile_id}
+                                            content={content}
+                                            profileImage={profile_image}
+                                            setComments={setComments}
+                                            setShowEditForm={setShowEditForm}
+                                        />
+                                    ) : (
+                                        <p>{content}</p>
+                                    )}</Card.Body>
+                                </Col>
+                                <Col>
+                                    {is_owner && !showEditForm(
+                                        <MoreDropdown handleEdit={() => setShowEditForm(true)} handleDelete={handleDelete} />
                                     )}
                                 </Col>
                             </Row>
