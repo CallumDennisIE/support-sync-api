@@ -31,23 +31,23 @@ const NavBar = () => {
 
     // Define icon for creating a ticket
     const addTicketIcon = (
-        <NavLink to="/create-ticket">Create Ticket</NavLink>
+        <NavLink to="/create-ticket"><i className="fa-solid fa-circle-plus fs-3"></i>Create Ticket</NavLink>
     );
 
     // Define tickets to be viewed when not authenticated
     const loggedOutIcons = (
         <>
-            <NavLink to="/signin">Sign In</NavLink>
-            <NavLink to="/signup">Sign Up</NavLink>
+            <NavLink to="/signin"><i className="fa-solid fa-lock fs-3"></i> Sign In</NavLink>
+            <NavLink to="/signup"><i className="fa-solid fa-user-plus fs-3"></i> Sign Up</NavLink>
         </>
     );
 
     // Define tickets to be viewed when authenticated
     const loggedInIcons = (
         <>
-            <NavLink to="/tickets">View Tickets</NavLink>
-            <NavLink to="/" onClick={handleSignOut}>Log Out</NavLink>
-            <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
+            <NavLink to="/tickets"><i className="fa-solid fa-magnifying-glass fs-3"></i> View Tickets</NavLink>
+            <NavLink to="/" onClick={handleSignOut}><i className="fa-solid fa-lock-open"></i> Log Out</NavLink>
+            <Avatar src={currentUser?.profile_image} text={currentUser?.username} />
         </>
     );
 
