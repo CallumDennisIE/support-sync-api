@@ -1,17 +1,19 @@
+// React imports
 import React, { useEffect, useState } from "react";
 
+// Network based imports
 import { useLocation } from "react-router";
-
 import { axiosReq } from "../api/axiosDefaults";
 import { fetchMoreData } from "../utils/utils";
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
 
+// Package based imports
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import InfiniteScroll from "react-infinite-scroll-component";
 
+// Custom component imports
 import Asset from './Asset';
 import ListTicketItem from "./ListTicketItem";
 
@@ -22,6 +24,7 @@ function TicketsPage({ filter = "" }) {
     const { pathname } = useLocation();
     const currentUser = useCurrentUser();
 
+    // Fetch all requested tickets
     useEffect(() => {
         const fetchTickets = async () => {
             try {

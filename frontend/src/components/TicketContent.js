@@ -1,14 +1,18 @@
+// React import
 import React from 'react';
 
+// Network based imports
 import { useHistory } from "react-router";
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
 import { axiosRes } from '../api/axiosDefaults';
 
+// Package based imports
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
+// Custom component imports
 import Sidebar from './Sidebar';
 import { MoreDropdown } from './MoreDropdown';
 
@@ -28,10 +32,12 @@ const TicketContent = (props) => {
     const is_owner = currentUser?.username === owner;
     const history = useHistory();
 
+    // Change URL to edit ticket page
     const handleEdit = () => {
         history.push(`/tickets/${id}/edit`);
     };
 
+    // Provide delete ticket handler
     const handleDelete = async () => {
         try {
             await axiosRes.delete(`/tickets/${id}/`);

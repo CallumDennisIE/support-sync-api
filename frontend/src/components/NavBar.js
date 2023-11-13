@@ -1,19 +1,24 @@
+// React import
 import React from 'react';
 
+// Network based imports
 import axios from "axios";
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContexts';
 import { NavLink } from 'react-router-dom';
 import { removeTokenTimestamp } from '../utils/utils';
 
+// Package based imports
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
+// Custom component import
 import Avatar from './Avatar';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
 
+    // Provide user sign out handler
     const handleSignOut = async () => {
         try {
             await axios.post("dj-rest-auth/logout/");
@@ -24,16 +29,20 @@ const NavBar = () => {
         }
     };
 
-
+    // Define icon for creating a ticket
     const addTicketIcon = (
         <NavLink to="/create-ticket">Create Ticket</NavLink>
     );
+
+    // Define tickets to be viewed when not authenticated
     const loggedOutIcons = (
         <>
             <NavLink to="/signin">Sign In</NavLink>
             <NavLink to="/signup">Sign Up</NavLink>
         </>
     );
+
+    // Define tickets to be viewed when authenticated
     const loggedInIcons = (
         <>
             <NavLink to="/tickets">View Tickets</NavLink>

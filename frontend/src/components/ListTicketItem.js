@@ -1,20 +1,21 @@
+// React import
 import React from 'react';
 
+// Network based import
 import { Link } from "react-router-dom";
 
+// Package based imports
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import ListGroup from "react-bootstrap/ListGroup";
 
 const ListTicketItem = (props) => {
     const {
         id,
         owner,
         title,
-        description,
         status,
         priority,
     } = props;

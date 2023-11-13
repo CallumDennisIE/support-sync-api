@@ -1,7 +1,10 @@
+// React import
 import React from "react";
 
+// Style based import
 import styles from "../styles/MoreDropdown.module.css";
 
+// Package based import
 import { Dropdown } from 'react-bootstrap';
 
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
@@ -15,6 +18,7 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
     />
 ));
 
+// Create a dropdown to allow different options to be selected.
 export const MoreDropdown = ({ handleEdit, handleDelete }) => {
     return (
         <Dropdown className="ml-auto" drop="left">

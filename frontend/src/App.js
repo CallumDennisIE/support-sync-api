@@ -1,10 +1,14 @@
-
+// Network based imports
 import { Route, Switch } from 'react-router-dom';
 import './api/axiosDefaults';
-import Container from "react-bootstrap/Container";
 
+// Style based imports
 import './App.css';
 
+// Package based import
+import Container from "react-bootstrap/Container";
+
+// Custom component imports
 import CreateTicket from './components/CreateTicket';
 import Ticket from './components/Ticket';
 import NavBar from './components/NavBar';

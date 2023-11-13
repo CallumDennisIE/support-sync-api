@@ -1,8 +1,11 @@
+// React import
 import React from "react";
 
-import Spinner from "react-bootstrap/Spinner";
-
+// Style based import
 import styles from "../styles/Asset.module.css";
+
+// Package based componenet
+import Spinner from "react-bootstrap/Spinner";
 
 const Asset = ({ spinner, src, message }) => {
     return (

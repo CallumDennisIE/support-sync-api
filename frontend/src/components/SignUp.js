@@ -1,8 +1,11 @@
+// React imports
 import React, { useState } from "react";
 
+// Network based imports
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
+// Package based imports
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
@@ -22,6 +25,7 @@ const SignUpForm = () => {
 
     const history = useHistory();
 
+    // Provide input change handler
     const handleChange = (event) => {
         setSignUpData({
             ...signUpData,
@@ -29,6 +33,7 @@ const SignUpForm = () => {
         });
     };
 
+    // Provide submit sign up request handler
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {

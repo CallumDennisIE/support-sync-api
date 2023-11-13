@@ -1,7 +1,10 @@
+// React imports
 import React, { useState } from "react";
 
+// Network based import
 import { axiosRes } from "../api/axiosDefaults";
 
+// Custom component import
 import Form from "react-bootstrap/Form";
 
 function CommentEditForm(props) {
@@ -9,10 +12,12 @@ function CommentEditForm(props) {
 
     const [formContent, setFormContent] = useState(content);
 
+    // Provide input change handler
     const handleChange = (event) => {
         setFormContent(event.target.value);
     };
 
+    // Provide submit edited comment handler
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {

@@ -1,5 +1,7 @@
+// React import
 import React from 'react';
 
+// Custom component import
 import Asset from './Asset';
 
 const NotFound = () => {

@@ -1,8 +1,11 @@
+// React imports
 import React, { useState } from 'react';
 
+// Network based imports
 import { useHistory } from "react-router";
 import { axiosReq } from "../api/axiosDefaults";
 
+// Custom component imports
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
@@ -22,6 +25,7 @@ const CreateTicket = () => {
     });
     const { title, description, priority } = ticketData;
 
+    // Provide input change handler
     const handleChange = (event) => {
         setTicketData({
             ...ticketData,
@@ -29,6 +33,7 @@ const CreateTicket = () => {
         });
     };
 
+    // Provide submit new ticket handler
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData();

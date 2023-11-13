@@ -1,14 +1,17 @@
+// React imports
 import React, { useEffect, useState } from 'react';
 
+// Network based imports
 import { fetchMoreData } from "../utils/utils";
 import { useParams } from 'react-router';
 import { axiosReq } from '../api/axiosDefaults';
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
 
+// Package based imports
 import Container from "react-bootstrap/Container";
-
 import InfiniteScroll from 'react-infinite-scroll-component';
 
+// Custom component imports
 import TicketContent from "./TicketContent";
 import CommentCreateForm from "./CreateComment";
 import Comment from './Comment';
@@ -23,6 +26,7 @@ const Ticket = () => {
     const profile_image = currentUser?.profile_image;
     const [comments, setComments] = useState({ results: [] });
 
+    // Fetch all the tickets and comments
     useEffect(() => {
         const handleMount = async () => {
             try {

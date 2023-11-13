@@ -1,8 +1,11 @@
+// React imports
 import React, { useState, useEffect } from 'react';
 
+// Network based imports
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../api/axiosDefaults";
 
+// Custom component imports
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
@@ -15,6 +18,7 @@ const EditTicket = () => {
     const history = useHistory();
     const { id } = useParams();
 
+    // Fetch the required ticket fields, to allow them to be shown.
     useEffect(() => {
         const handleMount = async () => {
             try {
@@ -38,6 +42,7 @@ const EditTicket = () => {
     });
     const { title, description, status, priority } = ticketData;
 
+    // Provide input change handler
     const handleChange = (event) => {
         setTicketData({
             ...ticketData,
@@ -45,6 +50,7 @@ const EditTicket = () => {
         });
     };
 
+    // Provide submit edited ticket handler
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData();

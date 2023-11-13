@@ -1,10 +1,13 @@
+// React imports
 import React, { useState } from "react";
 
+// Network based imports
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 import { useSetCurrentUser } from "../contexts/CurrentUserContexts";
 import { setTokenTimestamp } from '../utils/utils';
 
+// Package based imports
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
@@ -24,6 +27,8 @@ function SignIn() {
     const [errors, setErrors] = useState({});
 
     const history = useHistory();
+
+    // Provide submit sign in request handler
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -36,6 +41,7 @@ function SignIn() {
         }
     };
 
+    // Provide input change handler
     const handleChange = (event) => {
         setSignInData({
             ...signInData,

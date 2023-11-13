@@ -1,12 +1,16 @@
+// React imports
 import React, { useState } from "react";
 
+// Network based imports
 import { axiosRes } from '../api/axiosDefaults';
 import { useCurrentUser } from '../contexts/CurrentUserContexts';
 
+// Package based imports
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+// Custom component imports
 import Avatar from './Avatar';
 import { MoreDropdown } from './MoreDropdown';
 import EditComment from './EditComment';
@@ -17,9 +21,11 @@ const Comment = (props) => {
 
     const [showEditForm, setShowEditForm] = useState(false);
 
+    // Set current user code
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
 
+    // Provide delete comment handler
     const handleDelete = async () => {
         try {
             await axiosRes.delete(`/comments/${id}/`);
