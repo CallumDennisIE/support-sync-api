@@ -32,7 +32,7 @@ const NavBar = () => {
 
     // Define icon for creating a ticket
     const addTicketIcon = (
-        <Col><NavLink to="/create-ticket"><i className="fa-solid fa-circle-plus fs-3"></i>Create Ticket</NavLink></Col>
+        <Col><NavLink to="/create-ticket"><i className="fa-solid fa-circle-plus fs-3"></i> Create Ticket</NavLink></Col>
     );
 
     // Define tickets to be viewed when not authenticated
