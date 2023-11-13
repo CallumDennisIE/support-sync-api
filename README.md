@@ -45,6 +45,14 @@
     - [Compiling Static Files for Deployment](#compiling-static-files-for-deployment)
     - [Project Deployment](#project-deployment)
   - [Testing](#testing)
+    - [Create Account Manual Tests](#create-account-manual-tests)
+      - [Create Account - Valid Account](#create-account---valid-account)
+      - [Create Account - Username Already Exists](#create-account---username-already-exists)
+      - [Create Account - Password is Too Common](#create-account---password-is-too-common)
+      - [Create Account - Password is Too Short](#create-account---password-is-too-short)
+    - [Sign In Manual Tests](#sign-in-manual-tests)
+      - [Sign In - Valid Account](#sign-in---valid-account)
+      - [Sign In - Invalid Credentials](#sign-in---invalid-credentials)
 
 ## About
 
@@ -318,3 +326,81 @@ os.environ['SECRET_KEY'] = (Create a secret key to be used for the Django backen
 ## Testing
 
 - Code ran through ESLint linter without warnings
+
+### Create Account Manual Tests
+
+#### Create Account - Valid Account
+
+Test Steps:
+
+- Click Sign Up in the navbar.
+- Enter a username that does not already exists.
+- Enter a valid password.
+- Confirm the valid password.
+- Click Sign Up.
+- Verify that the account is created and the user is brought to the Sign In page.
+
+Outcome: Success
+
+#### Create Account - Username Already Exists
+
+Test Steps:
+
+- Click Sign Up in the navbar.
+- Enter a username that already exists.
+- Enter a valid password.
+- Confirm the valid password.
+- Click Sign Up.
+- Verify that the account is not created and the user is alerted `A user with that username already exists.`
+
+Outcome: Success
+
+#### Create Account - Password is Too Common
+
+Test Steps:
+
+- Click Sign Up in the navbar.
+- Enter a username that does not already exists.
+- Enter a common password, such as 'password'.
+- Confirm the password.
+- Click Sign Up.
+- Verify that the account is not created and the user is alerted `This password is too common.`
+
+Outcome: Success
+
+#### Create Account - Password is Too Short
+
+Test Steps:
+
+- Click Sign Up in the navbar.
+- Enter a username that does not already exists.
+- Enter a password that is under 8 characters, such as 'pass'.
+- Confirm the password.
+- Click Sign Up.
+- Verify that the account is not created and the user is alerted  `This password is too short. It must contain at least 8 characters.`
+
+Outcome: Success
+
+### Sign In Manual Tests
+
+#### Sign In - Valid Account
+
+Test Steps:
+
+- Click Sign In in the navbar.
+- Enter a username / password combination that does match a valid user.
+- Click Sign In.
+- Verify that the user is signed in and the user can see their username in the navbar.
+
+Outcome: Success
+
+#### Sign In - Invalid Credentials
+
+Test Steps:
+
+- Click Sign In in the navbar.
+- Enter a username / password combination that does not match a valid user.
+- Click Sign In.
+- Verify that the user is not signed in and the user is alerted  `Unable to log in with provided credentials.`
+
+Outcome: Success
