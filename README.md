@@ -7,6 +7,10 @@
 - [Support Sync](#support-sync)
   - [Contents](#contents)
   - [About](#about)
+  - [Project Goals](#project-goals)
+    - [Streamlined User Accounts](#streamlined-user-accounts)
+    - [Effortless Issue Reporting](#effortless-issue-reporting)
+    - [Fosters Collaboration](#fosters-collaboration)
   - [User Stories](#user-stories)
     - [User Authentication \& Profiles Sprint](#user-authentication--profiles-sprint)
       - [Create Account User Story](#create-account-user-story)
@@ -141,7 +145,13 @@ As a Requestor/Supporter, I would like to be able to list all comments on a tick
 
 - [Django REST Framework](https://www.django-rest-framework.org/) - Django framework to serve backend models as an API endpoint.
 
-- [React Bootstrap](https://react-bootstrap.github.io/) - Prebuilt toolkit to create elements.
+- [React Bootstrap](https://react-bootstrap.github.io/) - This frontend library was chosen, as Bootstrap allows for many frontend components to be designed over a shorter period of tie, using prebuilt components. React Bootstrap was used as it works with Reacts Virtual DOM and has no bootstrap.js or jQuery, making the project more streamlined.
+
+- [React Router](https://reactrouter.com/en/main) - This was utilised to allow page routing within the React project, allowing for the project to have multiple pages that can be accessed through URL manipulation and links.
+
+- [Axios](https://axios-http.com/docs/intro) - Axios was used as a HTTP client, to allow the project to make HTTP requests to the backend API.
+
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - This was used to avoid pagination or loading all queried items on frontend components, allowing users to scroll to retrieve more queried items. This both improves UX and also saves on page performance.
 
 - [GitHub](https://github.com/) - Code storage on a repository.
 
