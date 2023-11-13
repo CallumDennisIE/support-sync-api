@@ -40,12 +40,28 @@
 
 SupportSync is a powerful and intuitive ticketing system designed to streamline technical issue tracking and resolution within your organization. Whether you're managing IT support requests, troubleshooting technical challenges, or coordinating tasks across various departments, SupportSync provides a robust platform to enhance communication and collaboration.
 
+## Project Goals
+
+### Streamlined User Accounts
+
+Information stored about each user should be kept to a minimum, to ensure unneeded PII (Personal Identifiable Information) is not kept, as well as keeping the database size down, if this was to be scaled to an Enterprise solution.
+
+### Effortless Issue Reporting
+
+Users can easily report technical issues or service requests, providing essential details for efficient troubleshooting. This should be a quick process, to allow for speedy resolution of the issue.
+
+### Fosters Collaboration
+
+All users should be able to respond on a ticket, regardless of role, allowing cross-team collaboration and resulting in a faster response time. Allowing collaboration can also allow for a situations, such as a users manager approving a request within the comments. The comments should be where discussion of the issue occurs.
+
 ## User Stories
 
 The User Stories in this project have been tracked using a GitHub Project for a Kanban board and also GitHub Milestones to track the progress of individual sprints.
 [View the User Story GitHub Project here](https://github.com/users/CallumDennisIE/projects/6)
 
 ### [User Authentication & Profiles Sprint](https://github.com/CallumDennisIE/support-sync-api/milestone/1?closed=1)
+
+The **User Authentication & Profiles Sprint** relates the project goal of **Streamlined User Accounts**.
 
 #### [Create Account User Story](https://github.com/CallumDennisIE/support-sync-api/issues/1)
 
@@ -62,6 +78,8 @@ As a Requestor/Supporter, I would like to be able to sign in using my credential
 As a Requestor/Supporter, I would like to be able to sign out of my account when I want to stop accessing information locked to me
 
 ### [Ticket Control Sprint](https://github.com/CallumDennisIE/support-sync-api/milestone/2?closed=1)
+
+The **Ticket Control Sprint** relates the project goal of **Effortless Issue Reporting**.
 
 #### [Create Ticket User Story](https://github.com/CallumDennisIE/support-sync-api/issues/5)
 
@@ -84,6 +102,8 @@ As a Requestor/Supporter, I would like to be able to list all tickets. I would e
 As a Requestor/Supporter, I would like to be able to view a detailed page containing the ticket description, title, status and priority, requestor.
 
 ### [Comment Control Sprint](https://github.com/CallumDennisIE/support-sync-api/milestone/3?closed=1)
+
+The **Comment Control Sprint** relates the project goal of **Fosters Collaboration**.
 
 #### [Create Comment User Story](https://github.com/CallumDennisIE/support-sync-api/issues/9)
 
