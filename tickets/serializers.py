@@ -1,6 +1,11 @@
 from rest_framework import serializers
 from tickets.models import Ticket
 
+'''
+Ticket Serializer, providing the relevant fields and determining the owner
+value.
+'''
+
 
 class TicketSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')

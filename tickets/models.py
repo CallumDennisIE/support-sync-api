@@ -1,14 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# Models for the ticket app.
+
 
 class Ticket(models.Model):
+
+    # Provides the choice options for the dropdowns in the project.
+
     visibility_choices = [
         ('private', 'Private'),
         ('public', 'Public')
     ]
     priority_choices = [
-        ('low', 'Low'), 
+        ('low', 'Low'),
         ('medium', 'Medium'),
         ('high', 'High')
     ]
@@ -25,9 +30,12 @@ class Ticket(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
 
-    status = models.CharField(max_length=32, choices=status_choices, default='new')
-    visibility = models.CharField(max_length=32, choices=visibility_choices, default='private')
-    priority = models.CharField(max_length=32, choices=priority_choices, default='low')
+    status = models.CharField(max_length=32, choices=status_choices,
+                              default='new')
+    visibility = models.CharField(max_length=32, choices=visibility_choices,
+                                  default='private')
+    priority = models.CharField(max_length=32, choices=priority_choices,
+                                default='low')
 
     class Meta:
         ordering = ['-created_at']

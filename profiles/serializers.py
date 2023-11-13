@@ -1,6 +1,11 @@
 from rest_framework import serializers
 from .models import Profile
 
+'''
+Profile Serializer, providing the relevant fields and determining the owner
+value.
+'''
+
 
 class ProfileSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source="owner.username")

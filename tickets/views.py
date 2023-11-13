@@ -3,6 +3,8 @@ from support_sync_api.permissions import IsOwnerOrReadOnly
 from .models import Ticket
 from .serializers import TicketSerializer
 
+# Generics based view, to list all tickets.
+
 
 class TicketList(generics.ListCreateAPIView):
     serializer_class = TicketSerializer
@@ -11,6 +13,9 @@ class TicketList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+
+# Generics based view, to show the ticket detail page.
 
 
 class TicketDetail(generics.RetrieveUpdateDestroyAPIView):

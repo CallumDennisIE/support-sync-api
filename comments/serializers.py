@@ -1,6 +1,11 @@
 from rest_framework import serializers
 from .models import Comment
 
+'''
+Comment Serializer, providing the relevant fields and determining the owner
+value.
+'''
+
 
 class CommentSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')

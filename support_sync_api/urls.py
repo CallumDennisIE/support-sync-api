@@ -3,6 +3,8 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from .views import logout_route
 
+# URLs for the overall project, 'api/' is used for the backend URLs.
+
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),

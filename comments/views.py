@@ -4,6 +4,8 @@ from support_sync_api.permissions import IsOwnerOrReadOnly
 from .models import Comment
 from .serializers import CommentSerializer, CommentDetailSerializer
 
+# Generics based view, to list all comments.
+
 
 class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
@@ -14,6 +16,9 @@ class CommentList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+
+# Generics based view, to show the comment detail page.
 
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):

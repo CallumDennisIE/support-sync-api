@@ -5,12 +5,18 @@ from .settings import (
     JWT_AUTH_SECURE,
 )
 
+# Sets the route route message to appear on the API.
+
 
 @api_view()
 def root_route(request):
     return Response({
         "message": "Welcome to the SupportSync API"
     })
+
+
+# Provides the information required for the JSON Web Tokens to function.
+
 
 @api_view(['POST'])
 def logout_route(request):
@@ -33,4 +39,5 @@ def logout_route(request):
         samesite=JWT_AUTH_SAMESITE,
         secure=JWT_AUTH_SECURE,
     )
+
     return response

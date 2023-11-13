@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from tickets.models import Ticket
 
+# Models for the comment app.
+
 
 class Comment(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
