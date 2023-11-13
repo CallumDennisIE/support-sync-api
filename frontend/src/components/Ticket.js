@@ -26,7 +26,7 @@ const Ticket = () => {
     const profile_image = currentUser?.profile_image;
     const [comments, setComments] = useState({ results: [] });
 
-    // Fetch all the tickets and comments
+    // Fetch the ticket and associated comments
     useEffect(() => {
         const handleMount = async () => {
             try {

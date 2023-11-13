@@ -27,6 +27,7 @@
       - [Edit Comment User Story](#edit-comment-user-story)
       - [Delete Comment User Story](#delete-comment-user-story)
       - [List Comments User Story](#list-comments-user-story)
+  - [Component Architecture](#component-architecture)
   - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks, Software and Programs](#frameworks-software-and-programs)
@@ -124,6 +125,20 @@ As a Requestor / Supporter, I would like to be able to delete my own comments, i
 #### [List Comments User Story](https://github.com/CallumDennisIE/support-sync-api/issues/8)
 
 As a Requestor/Supporter, I would like to be able to list all comments on a ticket. To be able to see the discussion and assistance given on a ticket.
+
+## Component Architecture
+
+The `Avatar` and `Asset` components have been reused throughout the project, to save on creating custom components each time media content is required. `Avatar` is used for all user images in the project, while `Asset` is used for other images, spinners and messages to the user.
+
+`MoreDropdown` is used anytime a dropdown is required that would allow a user to both edit and/or delete an item. This is used on both the `TicketDetail` component as well as the individual `Comment` components.
+
+Rather than handling the individual tickets within the `TicketsPage` list component, each ticket consists of the following:
+
+- A `Ticket` component that acts as a parent component for the `TicketContent`, `CreateComment` and `Comment` components, it also handles requesting the ticket and comments from the API.
+  -- A `TicketContent` component, that handles the Edit and Delete action, displays the title and navigation buttons, as well as calling the `Sidebar` component.
+  -- The `Sidebar` component handles displaying all of the ticket attributes, such as status, priority and requestor.
+  -- The `CreateComment` component allows users to create a new comment
+  -- The `Comment` component handles viewing, editing and deleting of existing comments.
 
 ## Technologies Used
 
