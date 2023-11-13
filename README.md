@@ -53,6 +53,14 @@
     - [Sign In Manual Tests](#sign-in-manual-tests)
       - [Sign In - Valid Account](#sign-in---valid-account)
       - [Sign In - Invalid Credentials](#sign-in---invalid-credentials)
+    - [Ticket Control Manual Tests](#ticket-control-manual-tests)
+      - [Create Ticket - Valid Ticket](#create-ticket---valid-ticket)
+      - [Edit Ticket - Valid Ticket](#edit-ticket---valid-ticket)
+      - [Delete Ticket - Valid Ticket](#delete-ticket---valid-ticket)
+    - [Comment Control Manual Tests](#comment-control-manual-tests)
+      - [Create Comment - Valid Comment](#create-comment---valid-comment)
+      - [Edit Comment - Valid Comment](#edit-comment---valid-comment)
+      - [Delete Comment - Valid Comment](#delete-comment---valid-comment)
 
 ## About
 
@@ -377,7 +385,7 @@ Test Steps:
 - Enter a password that is under 8 characters, such as 'pass'.
 - Confirm the password.
 - Click Sign Up.
-- Verify that the account is not created and the user is alerted  `This password is too short. It must contain at least 8 characters.`
+- Verify that the account is not created and the user is alerted `This password is too short. It must contain at least 8 characters.`
 
 Outcome: Success
 
@@ -401,6 +409,88 @@ Test Steps:
 - Click Sign In in the navbar.
 - Enter a username / password combination that does not match a valid user.
 - Click Sign In.
-- Verify that the user is not signed in and the user is alerted  `Unable to log in with provided credentials.`
+- Verify that the user is not signed in and the user is alerted `Unable to log in with provided credentials.`
+
+Outcome: Success
+
+### Ticket Control Manual Tests
+
+#### Create Ticket - Valid Ticket
+
+Test Steps:
+
+- Sign In as a valid user
+- Click Create Ticket in the navbar
+- Enter a ticket title.
+- Enter a description, title and select a priority.
+- Click Create Ticket.
+- Verify that the ticket was created and the user is redirected to the ticket detail view with all the correct information.
+
+Outcome: Success
+
+#### Edit Ticket - Valid Ticket
+
+Test Steps:
+
+- Create a ticket.
+- Click View Tickets
+- Select the previously created ticket
+- Click on the options button.
+- Click the edit button.
+- Change the description, status, title and priority.
+- Click Save Changes
+- Verify that the ticket has changed to match the newly entered information.
+
+#### Delete Ticket - Valid Ticket
+
+Test Steps:
+
+- Create a ticket.
+- Click View Tickets
+- Select the previously created ticket
+- Click on the options button.
+- Click the delete button.
+- Verify that the ticket has been deleted and no longer shows in the view tickets navbar selection.
+
+Outcome: Success
+
+### Comment Control Manual Tests
+
+#### Create Comment - Valid Comment
+
+Test Steps:
+
+- Sign In as a valid user
+- Select View Tickets
+- Select any ticket.
+- Add comment text to input box that contains `my comment...`
+- Click Create Comment.
+- Verify that the comment was created under the ticket, and doesn't show in any other tickets comments
+
+Outcome: Success
+
+#### Edit Comment - Valid Comment
+
+Test Steps:
+
+- Sign In as a valid user
+- Select View Tickets
+- Select any ticket that contains a comment created by the signed in user.
+- Click on the options button.
+- Click on the Edit option in the dropdown.
+- Change the comment contents
+- Click Save changes
+- Verify that the comment has changed to match the newly entered information.
+
+#### Delete Comment - Valid Comment
+
+Test Steps:
+
+- Sign In as a valid user
+- Select View Tickets
+- Select any ticket that contains a comment created by the signed in user.
+- Click on the options button.
+- Click on the Delete option in the dropdown.
+- Verify that the comment has been deleted and does not show under the ticket.
 
 Outcome: Success
