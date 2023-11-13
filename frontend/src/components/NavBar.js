@@ -31,23 +31,23 @@ const NavBar = () => {
 
     // Define icon for creating a ticket
     const addTicketIcon = (
-        <NavLink to="/create-ticket"><i className="fa-solid fa-circle-plus fs-3"></i>Create Ticket</NavLink>
+        <Col><NavLink to="/create-ticket"><i className="fa-solid fa-circle-plus fs-3"></i>Create Ticket</NavLink></Col>
     );
 
     // Define tickets to be viewed when not authenticated
     const loggedOutIcons = (
         <>
-            <NavLink to="/signin"><i className="fa-solid fa-lock fs-3"></i> Sign In</NavLink>
-            <NavLink to="/signup"><i className="fa-solid fa-user-plus fs-3"></i> Sign Up</NavLink>
+            <Col><NavLink to="/signin"><i className="fa-solid fa-lock fs-3"></i> Sign In</NavLink></Col>
+            <Col><NavLink to="/signup"><i className="fa-solid fa-user-plus fs-3"></i> Sign Up</NavLink></Col>
         </>
     );
 
     // Define tickets to be viewed when authenticated
     const loggedInIcons = (
         <>
-            <NavLink to="/tickets"><i className="fa-solid fa-magnifying-glass fs-3"></i> View Tickets</NavLink>
-            <NavLink to="/" onClick={handleSignOut}><i className="fa-solid fa-lock-open"></i> Log Out</NavLink>
-            <p><i class="fa-solid fa-user">{currentUser?.username}</i></p>
+            <Col><NavLink to="/tickets"><i className="fa-solid fa-magnifying-glass fs-3"></i> View Tickets</NavLink></Col>
+            <Col><NavLink to="/" onClick={handleSignOut}><i className="fa-solid fa-lock-open"></i> Log Out</NavLink></Col>
+            <Col><p><i className="fa-solid fa-user"></i>{currentUser?.username}</p></Col>
         </>
     );
 
@@ -56,7 +56,7 @@ const NavBar = () => {
         <div>
             <Navbar bg="light" expand="lg">
                 <NavLink exact to="/">
-                    <Navbar.Brand href="#home">SupportSync</Navbar.Brand>
+                    <Navbar.Brand href="#home"><i class="fa-solid fa-handshake"></i>SupportSync</Navbar.Brand>
                 </NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
