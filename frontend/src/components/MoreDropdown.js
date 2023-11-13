@@ -8,14 +8,17 @@ import styles from "../styles/MoreDropdown.module.css";
 import { Dropdown } from 'react-bootstrap';
 
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
-    <i
-        className="fas fa-ellipsis-v"
-        ref={ref}
-        onClick={(e) => {
-            e.preventDefault();
-            onClick(e);
-        }}
-    />
+    <>
+        <p>Options</p>
+        <i
+            className="fas fa-ellipsis-v"
+            ref={ref}
+            onClick={(e) => {
+                e.preventDefault();
+                onClick(e);
+            }}
+        />
+    </>
 ));
 
 // Create a dropdown to allow different options to be selected.
