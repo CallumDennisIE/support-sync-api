@@ -10,6 +10,7 @@ import { removeTokenTimestamp } from '../utils/utils';
 // Package based imports
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import Col from "react-bootstrap/Col";
 
 // Custom component import
 import Avatar from './Avatar';
