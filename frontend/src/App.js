@@ -17,6 +17,8 @@ import SignUp from './components/SignUp';
 import TicketsPage from './components/TicketsPage';
 import EditTicket from './components/EditTicket';
 import NotFound from './components/NotFound';
+import Home from './components/Home';
+
 
 function App() {
     return (
@@ -24,7 +26,7 @@ function App() {
             <NavBar />
             <Container>
                 <Switch>
-                    <Route exact path="/" render={() => <h1>Welcome to Support Sync</h1>} />
+                    <Route exact path="/" render={() => <Home />} />
                     <Route exact path="/tickets/" render={() => <TicketsPage message="No tickets found. Try a different search query." />} />
                     <Route exact path="/tickets/:id" render={() => <Ticket />} />
                     <Route exact path="/tickets/:id/edit" render={() => <EditTicket />} />
