@@ -47,7 +47,7 @@ const NavBar = () => {
         <>
             <NavLink to="/tickets"><i className="fa-solid fa-magnifying-glass fs-3"></i> View Tickets</NavLink>
             <NavLink to="/" onClick={handleSignOut}><i className="fa-solid fa-lock-open"></i> Log Out</NavLink>
-            <Avatar src={currentUser?.profile_image} text={currentUser?.username} />
+            <p><i class="fa-solid fa-user">{currentUser?.username}</i></p>
         </>
     );
 
